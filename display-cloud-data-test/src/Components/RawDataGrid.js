@@ -1,17 +1,13 @@
 // import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ReactPaginate from "react-paginate";
-// import InfiniteScroll from "react-infinite-scroll-component";
+import Draggable, {DraggableCore} from 'react-draggable';
+
 import "../App.css";
-// import { LoadingCard } from "./loadingElancho";
-// import { indexOf } from "lodash";
 
 export const RawDataGrid = () => {
   const apiUrl = "https://engineering-task.elancoapps.com";
   const [loadData, setLoadData] = useState([]);
-  // const[page, setPage]=useState(1);
-  // const[hasMore, setHasMore] = useState(true);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(null);
@@ -21,12 +17,6 @@ export const RawDataGrid = () => {
     try {
       setLoading(true);
       const res = await axios.get(url);
-      // setLoadData(res.data);
-      // setTimeout(() => {
-      // console.warn("concat data",res.data.concat(Array.from({length:100})))
-      // setLoadData(res.data);
-      // .concat(Array.from({length:20}))
-      // }, 1000);
       const newDataSet = await res.data;
       setLoadData((loadData) => [...loadData, ...newDataSet]);
       setLoading(false)
@@ -73,12 +63,13 @@ export const RawDataGrid = () => {
           ))}
         </div>
       <div className="wrapper auto-fill">
-        {loading && <h4>Loading...</h4>}
+        {loading && <h4 className="load">Loading...</h4>}
         {currentPosts
           // .slice(0, 50)
           .map((item, index) => {
             let taglink = Object.keys(item.Tags);
             return (
+              <Draggable>
               <div className="gridBox" id={index + 1}>
                 <strong>
                   {/* {index + 1}*/}
@@ -105,14 +96,12 @@ export const RawDataGrid = () => {
                       <span>{tags}</span>
                     </li>
                   ))}
-                  {/* {console.log(item.Tags.map((tags) => <li>{tags}</li>))} */}
                 </ul>
               </div>
+              </Draggable>
             );
           })}
       </div>
-      <div></div>
-      {/* </InfiniteScroll> */}
     </div>
   );
 };

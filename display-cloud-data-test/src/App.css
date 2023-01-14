@@ -9,7 +9,6 @@ body {
 }
 .wrapper {
   display: grid;
-  /* grid-template-columns: auto auto auto; */
   grid-gap: 10px;
   padding: 10px;
   background-color: #2196F3; 
@@ -25,9 +24,7 @@ body {
   background-color: #07486d;
 }
 .wrapper> div {
-  /* font-size: 30px;
-  padding: .5em;
-  background-color: #444; */
+  cursor:grab;
   text-align: center;
 }
 
@@ -38,7 +35,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 .gridBox:nth-child(even) {
-  background-color: #ccc;
+  background-color: #31ad67;
   color: #000;
 }
 
@@ -56,12 +53,11 @@ ul li span{
   color:#fff;
   padding:5px;
   background-color: #4f0396;
-  border:1px solid #ccc;  
+  border:1px solid #3e0641;  
+  border-radius: 10px;
 }
 
 .pagination-container{
-  /* width: 100%;
-  height: auto; */
   margin: 1%;
 }
 .pagintion-item{
@@ -69,4 +65,10 @@ ul li span{
   border:1px solid #165385;
   margin:2px;
   border-radius: 0.5em;
+  background-color: #1a9ae4;
+  cursor:pointer;
+}
+.load{
+  color:#fff;
+  font-size: 2em;
 }
