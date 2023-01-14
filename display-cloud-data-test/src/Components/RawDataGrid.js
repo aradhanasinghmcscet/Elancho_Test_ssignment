@@ -1,7 +1,7 @@
 // import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Draggable, {DraggableCore} from 'react-draggable';
+import Draggable from 'react-draggable';
 
 import "../App.css";
 
