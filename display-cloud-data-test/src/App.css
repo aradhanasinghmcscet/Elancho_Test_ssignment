@@ -7,26 +7,41 @@ body {
 .error{
   color:red;
 }
-.gridBox {
-  background-color: #444;
-  color: #fff;
+.wrapper {
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+  grid-gap: 10px;
+  padding: 10px;
+  background-color: #2196F3; 
+  background: conic-gradient(#106738, #650a41);
+}
+
+.wrapper> div {
+  border: 2px solid #1a9ae4;
   border-radius: 5px;
   padding: 20px;
   margin:20px;
-  /* font-size: 150%; */
+  color: #fff;
+  background-color: #07486d;
+}
+.wrapper> div {
+  /* font-size: 30px;
+  padding: .5em;
+  background-color: #444; */
+  text-align: center;
 }
 
+.auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
 .gridBox:nth-child(even) {
   background-color: #ccc;
   color: #000;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-}
 
 ul{
   list-style: none;
@@ -43,10 +58,15 @@ ul li span{
   background-color: #4f0396;
   border:1px solid #ccc;  
 }
-/* .gridBox{
-border:1px solid #ccc;
-padding: 10px;
-margin: 10px;
-display: grid;
-grid-auto-flow: column;
-} */
+
+.pagination-container{
+  /* width: 100%;
+  height: auto; */
+  margin: 1%;
+}
+.pagintion-item{
+  padding: 5px;
+  border:1px solid #165385;
+  margin:2px;
+  border-radius: 0.5em;
+}
