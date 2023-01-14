@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 40px;
 }
@@ -25,7 +28,21 @@ body {
   padding: 10px;
 }
 
-
+ul{
+  list-style: none;
+  display: flex;
+  font-size: 16px;
+}
+ul li{
+  margin:0 2px; 
+  flex-direction: column;
+}
+ul li span{
+  color:#fff;
+  padding:5px;
+  background-color: #4f0396;
+  border:1px solid #ccc;  
+}
 /* .gridBox{
 border:1px solid #ccc;
 padding: 10px;
