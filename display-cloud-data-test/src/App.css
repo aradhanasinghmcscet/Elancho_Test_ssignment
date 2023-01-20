@@ -42,12 +42,12 @@ body {
 
 ul{
   list-style: none;
-  display: flex;
+  display: block;
   font-size: 16px;
 }
 ul li{
   margin:0 2px; 
-  flex-direction: column;
+  display:inline-block
 }
 ul li span{
   color:#fff;
@@ -55,6 +55,7 @@ ul li span{
   background-color: #4f0396;
   border:1px solid #3e0641;  
   border-radius: 10px;
+  display:inline-block
 }
 
 .pagination-container{
